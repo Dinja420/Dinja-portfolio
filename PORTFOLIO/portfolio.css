@@ -1,0 +1,389 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Calibri', sans-serif;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.25;
+    filter: blur(120px);
+    animation: float 25s infinite linear;
+}
+
+body::before {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #0077cc, #00c6ff);
+    top: -150px;
+    left: -200px;
+}
+
+body::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #ff7eb3, #ff758c);
+    bottom: -100px;
+    right: -120px;
+}
+
+.page {
+    max-width: 900px;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 60px auto;
+    padding: 60px 80px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #0077cc;
+    padding-bottom: 30px;
+    margin-bottom: 50px;
+}
+
+.header-text h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #003366;
+}
+
+.header-text p {
+    font-size: 18px;
+    color: #555;
+}
+
+.profile-pic img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid rgb(0, 157, 255);
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 24px;
+    color: #003366;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.button, a.button {
+    display: block;
+    background: #0077cc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+}
+
+.button:hover {
+    background: #0589f5;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dark-toggle {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: transparent;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.dark-toggle:hover {
+    transform: scale(1.2);
+}
+
+body.dark-mode {
+    background: linear-gradient(to right, #1e1e1e, #2c2c2c);
+    color: #e0e0e0;
+}
+
+body.dark-mode .page {
+    background: rgba(30, 30, 30, 0.95);
+    box-shadow: 0 20px 50px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+    color: #ffffff;
+}
+
+body.dark-mode p,
+body.dark-mode li {
+    color: #cccccc;
+}
+
+body.dark-mode header {
+    border-bottom: 2px solid #888;
+}
+
+body.dark-mode .button {
+    background: #0589f5;
+    color: white;
+}
+
+body.dark-mode .button:hover {
+    background: #666;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background 0.3s;
+    color: white;
+}
+
+.instagram {
+    background: #0589f5;
+}
+
+.instagram:hover {
+    background: #C13584;
+}
+
+.youtube {
+    background: #0589f5;
+}
+
+.youtube:hover {
+    background: #CC0000;
+}
+#iskustva {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.jezici-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 30px;
+  justify-items: center;
+  margin-top: 30px;
+}
+
+.jezik {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.custom-icon {
+  font-size: 48px;
+  font-weight: bold;
+  border: 3px solid #333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Courier New', monospace;
+  background-color: #f4f4f4;
+  box-shadow: 3px 3px 0px #999;
+}
+
+.jezik p {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 30px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    transition: transform 0.3s;
+}
+
+.skill-item p {
+    font-weight: bold;
+    color: #003366;
+}
+
+body.dark-mode .skill-item p {
+    color: #ccc;
+}
+
+.skill-item img:hover {
+    transform: scale(1.15);
+}
+.rankovi-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.rankovi-lista li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.rankovi-lista li img {
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+    object-fit: contain;
+}
+
+body.dark-mode .rankovi-lista li strong {
+    color: #fff;
+}
+.rankovi-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.rankovi-lista li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.game-icon, .rank-icon {
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+}
+
+.rankovi-lista span {
+    margin-right: 8px;
+}
+.case-container {
+    position:relative;
+    width: 400px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.case-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* Tekst inicijalno sakriven */
+.components-text {
+    position: absolute;
+    top: 15%;
+    left: 10%;
+    right: 10%;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px black;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover efekat: sakriva sliku, prikazuje tekst */
+.case-container:hover .case-image {
+    opacity: 0;
+}
+
+.case-container:hover .components-text {
+    opacity: 1;
+}
+
+
+
+.shoot-toggle {
+    position: fixed;
+    top: 10px;
+    right: 60px;
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.skull {
+    position: fixed;
+    font-size: 32px;
+    pointer-events: none;
+    animation: fadeOut 3s forwards;
+    z-index: 999;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}

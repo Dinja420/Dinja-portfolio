@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loldle - Pogadanje Heroja</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-gamepad"></i> Igra pogadjanja</h1>
+            <div class="game-info">
+                <p>Pogodi League of Legends heroja u što manje pokušaja!</p>
+            </div>
+        </header>
+
+        <div class="game-container">
+            <div class="input-container">
+                <input type="text" id="guess-input" placeholder="Unesi ime heroja..." autocomplete="off">
+                <div id="autocomplete-list" class="autocomplete-list"></div>
+                <button id="guess-button" class="primary-btn">
+                    <i class="fas fa-search"></i> Proveri
+                </button>
+                <button id="restart-button" class="secondary-btn">
+                    <i class="fas fa-sync-alt"></i> Nova igra
+                </button>
+                <button id="show-answer-button" class="secondary-btn">
+                    <i class="fas fa-eye"></i> Prikaži odgovor
+                </button>
+            </div>
+
+            <div class="results-container">
+                <div class="guess-section">
+                    <h3><i class="fas fa-user"></i> Pogodi heroja:</h3>
+                    <div id="guess-results" class="guess-grid champion-guess-results"></div>
+                </div>
+                
+                <div class="attributes-section">
+                    <h3><i class="fas fa-info-circle"></i> Atributi heroja:</h3>
+                    <div class="attributes-grid">
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-map-marker-alt"></i> Lane</div>
+                            <div id="lane-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-bolt"></i> Resource</div>
+                            <div id="resource-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-venus-mars"></i> Gender</div>
+                            <div id="gender-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-globe"></i> Region</div>
+                            <div id="region-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-shield-alt"></i> Tip</div>
+                            <div id="type-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-arrows-alt-h"></i> Range</div>
+                            <div id="range-values" class="attribute-values"></div>
+                        </div>
+                        <div class="attribute">
+                            <div class="attribute-name"><i class="fas fa-calendar-alt"></i> Godina</div>
+                            <div id="date-values" class="attribute-values"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="history-section">
+                <h3><i class="fas fa-history"></i> Istorija pokušaja:</h3>
+                <div id="history" class="history-items champion-history"></div>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 LOLdle - League of Legends pogadanje heroja</p>
+        </footer>
+    </div>
+    <div id="new-game-popup" class="popup-overlay">
+    <div class="popup">
+        <p>Da li ste sigurni da želite da počnete novu igru?</p>
+        <div class="popup-buttons">
+            <button id="popup-yes" class="primary-btn">Da</button>
+            <button id="popup-no" class="secondary-btn">Ne</button>
+        </div>
+    </div>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
